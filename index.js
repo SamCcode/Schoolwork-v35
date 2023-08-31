@@ -9,7 +9,7 @@ const checkURLPath = () => {
 };
 
 // Call the function when the page loads
-window.onload = checkURLPath;
+//window.onload = checkURLPath;
 
 
         if (isConditionMet) {
