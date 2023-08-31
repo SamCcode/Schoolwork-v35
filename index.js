@@ -14,3 +14,15 @@ const validPaths = '/home.html';
     };
 
     window.onload = checkURLPath;
+
+
+
+
+    // script.js
+  // script.js
+const navLinks = document.querySelector('.nav-links');
+const mobileMenuButton = document.querySelector('.mobile-menu-button');
+
+mobileMenuButton.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});
