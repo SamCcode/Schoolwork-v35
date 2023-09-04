@@ -1,5 +1,3 @@
-
-
 const validPaths = '/home.html';
 
     const checkURLPath = () => {
@@ -14,15 +12,26 @@ const validPaths = '/home.html';
     };
 
     window.onload = checkURLPath;
-
-
-
-
-    // script.js
-  // script.js
-const navLinks = document.querySelector('.nav-links');
-const mobileMenuButton = document.querySelector('.mobile-menu-button');
-
-mobileMenuButton.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-});
+    const imageContainer = document.getElementById("imageContainer");
+    // Load JSON data using fetch
+    fetch('dogImg.json')
+    .then(response => response.json())
+    .then(jsonData => {
+        // Loop through the JSON data and create <img> elements for each image
+        jsonData.forEach(imageData => {
+            let el = document.createElement("article");
+            el.innerHTML = (`
+            <img src="${imageData.img}" class="">
+                <h3>${imageData.name}</h3>
+    
+                
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            `);
+          
+          imageContainer.appendChild(el);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching JSON data:', error);
+      });
+    
